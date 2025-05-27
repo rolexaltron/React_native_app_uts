@@ -127,7 +127,7 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-   // backgroundColor: '#eee',
+    // backgroundColor: '#eee',
   },
   title: {
     fontSize: 18,
@@ -200,11 +200,11 @@ const styles = StyleSheet.create({
     color: '#888',
   },
   buttonmon: {
-    backgroundColor: '#4B0082',
+    backgroundColor: '#6A1B9A',
     padding: 9,
     borderRadius: 5,
     alignItems: 'center',
-    width: 180, // Set desired width
+    width: 210, // Set desired width
     alignSelf: 'flex-start', // Align it to the left of the container
   },
   buttonTextmon: {
@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
   info1: {
     fontSize: 15,
     marginVertical: -1.5,
+    fontWeight: 'bold',
   },
   red1: {
     color: 'red',
@@ -261,7 +262,7 @@ const styles = StyleSheet.create({
     padding: 0,
     borderBottomWidth: 1,
     borderColor: 'black',
-    marginTop:-4
+    marginTop: -4,
   },
   rowAlign: {
     flexDirection: 'row',
@@ -286,11 +287,13 @@ const styles = StyleSheet.create({
   },
   stationLocal: {
     fontSize: 14,
+    fontWeight: 'bold',
   },
   localLang: {
     fontSize: 14,
     marginBottom: 1,
-    marginLeft:30
+    marginLeft: 30,
+    fontWeight: 'bold',
   },
 
   bottomRow: {
@@ -307,14 +310,14 @@ const styles = StyleSheet.create({
     color: 'red',
     fontWeight: 'bold',
     fontSize: 14,
-    marginLeft:51
-    
+    marginLeft: 51,
+    marginTop: -2,
   },
-    localRed1: {
+  localRed1: {
     color: 'red',
     fontWeight: 'bold',
     fontSize: 14,
-    marginLeft:88
-    
+    marginLeft: 88,
+    marginTop: -2,
   },
 });
