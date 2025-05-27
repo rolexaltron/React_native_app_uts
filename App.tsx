@@ -39,9 +39,6 @@ type SectionProps = PropsWithChildren<{
 
 function App(): React.JSX.Element {
 
-
-
-
  return (
     <NavigationContainer>
       <Stack.Navigator>
