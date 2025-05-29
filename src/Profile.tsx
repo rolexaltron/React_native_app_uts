@@ -186,14 +186,16 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-   justifyContent: 'space-between',
+   justifyContent: 'center', 
+   //berfor space between 
+   
   },
   happy: {
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
     marginTop: 6,
-   //fontFamily: 'serif',
+   fontFamily: 'serif',
    
     
   },
