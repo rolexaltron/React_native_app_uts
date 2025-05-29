@@ -98,9 +98,45 @@ const Profile = () => {
           </View>
         </View>
 
-        <Text style={styles.info}>Validity: FROM 30/09/2024 TO 29/10/2024</Text>
-        <Text style={styles.info}>Distance: 79 km</Text>
-        <Text style={styles.info}>Booking Time: 29/09/2024 20:10</Text>
+  <View >
+  <Text style={styles.infoRowTop}>
+    SAC:<Text style={styles.blackText}>996411</Text>  IR:<Text style={styles.blackText}>27AAAGM0289C2ZI</Text>
+  </Text>
+
+  <Text style={styles.infoRow}>
+    Validity: FROM <Text style={styles.highlightDate}>30/09/2024</Text> TO <Text style={styles.highlightDate}>29/10/2024</Text>
+  </Text>
+
+  <View style={styles.middleRow}>
+    <Text style={styles.bookingId}>R17527</Text>
+    <Text style={styles.distance}>Distance: <Text style={styles.blackText}>79 km</Text></Text>
+  </View>
+
+  <Text style={styles.bookingTime}>
+    Booking Time: <Text style={styles.boldText}>29/09/2024 20:10</Text>
+  </Text>
+</View>
+
+
+      </View>
+
+       <View>
+       
+       <View style={styles.noticeSection}>
+  <Text style={styles.noticeText}>
+    It is recommended not to perform factory reset or change your handset whenever you are valid ticket in the mobile
+  </Text>
+
+  <Text style={styles.clickableText}>
+    Click for Changing Handset with Valid Ticket
+  </Text>
+
+  <Text style={styles.emergencyText}>
+    For MEDICAL EMERGENCY | FIRST AID CONTACT TICKET{'\n'}
+    CHECKING STAFF | GUARD OR DIAL 139
+  </Text>
+</View>
+
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button}>
@@ -113,8 +149,7 @@ const Profile = () => {
             <Text style={styles.buttonText}>OK</Text>
           </TouchableOpacity>
         </View>
-      </View>
-
+       </View>
       <Text style={styles.footer}>
         Centre for Railway Information Systems (CRIS)
       </Text>
@@ -319,5 +354,85 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 88,
     marginTop: -2,
+  },
+   validitySection: {
+    backgroundColor: '#8EDB5A',
+    padding: 10,
+    marginVertical: 10,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#999',
+  },
+  infoRowTop: {
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 4,
+    
+  },
+  infoRow: {
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 6,
+    marginLeft:35
+  },
+  highlightDate: {
+    color: 'red',
+    fontWeight: 'bold',
+  },
+  middleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 6,
+  },
+  bookingId: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#000',
+  },
+  distance: {
+    fontWeight: 'bold',
+    fontSize: 14,
+    color: '#000',
+  },
+  bookingTime: {
+   // backgroundColor: '#7BD540',
+   // padding: 4,
+   // borderRadius: 4,
+    fontWeight: 'bold',
+    fontSize: 15,
+    textAlign: 'center',
+  },
+  boldText: {
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  blackText: {
+    color: '#000',
+  },
+  noticeSection: {
+    backgroundColor: '#eee',
+    padding: 10,
+    borderTopWidth: 2,
+    borderTopColor: 'green',
+  },
+  noticeText: {
+    fontSize: 10,
+    color: '#333',
+   // textAlign: 'center',
+    marginTop:-10,
+  },
+  clickableText: {
+    color: '#f90',
+    fontSize: 15,
+    fontWeight: 'bold',
+   // textAlign: 'center',
+    textDecorationLine: 'underline',
+    marginBottom: 10,
+  },
+  emergencyText: {
+    color: 'red',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 12,
   },
 });
