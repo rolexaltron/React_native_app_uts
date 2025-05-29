@@ -47,7 +47,7 @@ function App(): React.JSX.Element {
           component={Home}
           options={{title: 'Welcome'}}
         />
-         <Stack.Screen name="Profile" component={Profile} />
+         <Stack.Screen name="Profile" component={Profile}   options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+import HeaderMarquee from './HeaderMarquee';
 
 const Profile = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <HeaderMarquee/>
       <View style={styles.ticket}>
         <View style={styles.header}>
           <Text style={styles.happy}>HAPPY JOURNEY</Text>
@@ -98,45 +100,46 @@ const Profile = () => {
           </View>
         </View>
 
-  <View >
-  <Text style={styles.infoRowTop}>
-    SAC:<Text style={styles.blackText}>996411</Text>  IR:<Text style={styles.blackText}>27AAAGM0289C2ZI</Text>
-  </Text>
+        <View>
+          <Text style={styles.infoRowTop}>
+            SAC:<Text style={styles.blackText}>996411</Text> IR:
+            <Text style={styles.blackText}>27AAAGM0289C2ZI</Text>
+          </Text>
 
-  <Text style={styles.infoRow}>
-    Validity: FROM <Text style={styles.highlightDate}>30/09/2024</Text> TO <Text style={styles.highlightDate}>29/10/2024</Text>
-  </Text>
+          <Text style={styles.infoRow}>
+            Validity: FROM <Text style={styles.highlightDate}>30/09/2024</Text>{' '}
+            TO <Text style={styles.highlightDate}>29/10/2024</Text>
+          </Text>
 
-  <View style={styles.middleRow}>
-    <Text style={styles.bookingId}>R17527</Text>
-    <Text style={styles.distance}>Distance: <Text style={styles.blackText}>79 km</Text></Text>
-  </View>
+          <View style={styles.middleRow}>
+            <Text style={styles.bookingId}>R17527</Text>
+            <Text style={styles.distance}>
+              Distance: <Text style={styles.blackText}>79 km</Text>
+            </Text>
+          </View>
 
-  <Text style={styles.bookingTime}>
-    Booking Time: <Text style={styles.boldText}>29/09/2024 20:10</Text>
-  </Text>
-</View>
-
-
+          <Text style={styles.bookingTime}>
+            Booking Time: <Text style={styles.boldText}>29/09/2024 20:10</Text>
+          </Text>
+        </View>
       </View>
 
-       <View>
-       
-       <View style={styles.noticeSection}>
-  <Text style={styles.noticeText}>
-    It is recommended not to perform factory reset or change your handset whenever you are valid ticket in the mobile
-  </Text>
+      <View>
+        <View style={styles.noticeSection}>
+          <Text style={styles.noticeText}>
+            It is recommended not to perform factory reset or change your
+            handset whenever you are valid ticket in the mobile
+          </Text>
 
-  <Text style={styles.clickableText}>
-    Click for Changing Handset with Valid Ticket
-  </Text>
+          <Text style={styles.clickableText}>
+            Click for Changing Handset with Valid Ticket
+          </Text>
 
-  <Text style={styles.emergencyText}>
-    For MEDICAL EMERGENCY | FIRST AID CONTACT TICKET{'\n'}
-    CHECKING STAFF | GUARD OR DIAL 139
-  </Text>
-</View>
-
+          <Text style={styles.emergencyText}>
+            For MEDICAL EMERGENCY | FIRST AID CONTACT TICKET{'\n'}
+            CHECKING STAFF | GUARD OR DIAL 139
+          </Text>
+        </View>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button}>
@@ -149,7 +152,7 @@ const Profile = () => {
             <Text style={styles.buttonText}>OK</Text>
           </TouchableOpacity>
         </View>
-       </View>
+      </View>
       <Text style={styles.footer}>
         Centre for Railway Information Systems (CRIS)
       </Text>
@@ -168,12 +171,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#ADFF2F',
+    color: '#7acc00',
     marginBottom: 10,
   },
   ticket: {
-    backgroundColor: '#adff2f',
-    padding: 15,
+    backgroundColor: '#c2ff66',
+    padding: 12,
     borderRadius: 10,
   },
   header: {
@@ -216,13 +219,15 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   buttonContainer: {
-    marginTop: 15,
+    marginTop: -8,
   },
   button: {
     backgroundColor: '#ff5733',
     padding: 10,
     marginVertical: 5,
-    borderRadius: 8,
+    borderRadius: 20,
+    width:'90%',
+    marginLeft:18,
   },
   buttonText: {
     color: '#fff',
@@ -239,8 +244,9 @@ const styles = StyleSheet.create({
     padding: 9,
     borderRadius: 5,
     alignItems: 'center',
-    width: 210, // Set desired width
+    width: 190, // Set desired width
     alignSelf: 'flex-start', // Align it to the left of the container
+    marginLeft:20
   },
   buttonTextmon: {
     color: '#fff',
@@ -355,7 +361,7 @@ const styles = StyleSheet.create({
     marginLeft: 88,
     marginTop: -2,
   },
-   validitySection: {
+  validitySection: {
     backgroundColor: '#8EDB5A',
     padding: 10,
     marginVertical: 10,
@@ -367,13 +373,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 4,
-    
   },
   infoRow: {
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 6,
-    marginLeft:35
+    marginLeft: 35,
   },
   highlightDate: {
     color: 'red',
@@ -395,9 +400,9 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   bookingTime: {
-   // backgroundColor: '#7BD540',
-   // padding: 4,
-   // borderRadius: 4,
+    // backgroundColor: '#7BD540',
+    // padding: 4,
+    // borderRadius: 4,
     fontWeight: 'bold',
     fontSize: 15,
     textAlign: 'center',
@@ -418,14 +423,14 @@ const styles = StyleSheet.create({
   noticeText: {
     fontSize: 10,
     color: '#333',
-   // textAlign: 'center',
-    marginTop:-10,
+    // textAlign: 'center',
+    marginTop: -10,
   },
   clickableText: {
     color: '#f90',
     fontSize: 15,
     fontWeight: 'bold',
-   // textAlign: 'center',
+    // textAlign: 'center',
     textDecorationLine: 'underline',
     marginBottom: 10,
   },
@@ -434,5 +439,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 12,
+    marginTop:-11,
   },
 });
