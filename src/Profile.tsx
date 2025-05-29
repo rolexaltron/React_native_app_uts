@@ -5,12 +5,16 @@ import {
   ScrollView,
   Button,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import React from 'react';
 import HeaderMarquee from './HeaderMarquee';
 
 const Profile = () => {
   return (
+    <SafeAreaView>
+
+    
     <ScrollView contentContainerStyle={styles.container}>
       <HeaderMarquee/>
       <View style={styles.ticket}>
@@ -157,6 +161,7 @@ const Profile = () => {
         Centre for Railway Information Systems (CRIS)
       </Text>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -181,13 +186,16 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+   justifyContent: 'space-between',
   },
   happy: {
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
     marginTop: 6,
+   //fontFamily: 'serif',
+   
+    
   },
   monthly: {
     fontSize: 16,
@@ -233,6 +241,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontWeight: 'bold',
+   
   },
   footer: {
     marginTop: 20,
@@ -241,16 +250,19 @@ const styles = StyleSheet.create({
   },
   buttonmon: {
     backgroundColor: '#6A1B9A',
-    padding: 9,
-    borderRadius: 5,
+    padding: 6,
+    borderRadius: 1,
     alignItems: 'center',
-    width: 190, // Set desired width
+    width: '54%', // Set desired width
     alignSelf: 'flex-start', // Align it to the left of the container
-    marginLeft:20
+    marginLeft:20,
+    
   },
   buttonTextmon: {
     color: '#fff',
     fontWeight: 'bold',
+    fontFamily: 'serif',
+    fontSize: 17,
   },
 
   adultvi1: {
