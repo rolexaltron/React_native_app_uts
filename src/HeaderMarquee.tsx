@@ -27,7 +27,7 @@ const HeaderMarquee = () => {
           Unreserved Ticketing
         </Animated.Text>
       </View>
-      <Image source={require('./assets/red.png')} style={styles.logo} />
+      <Image source={require('./assets/red2.png')} style={styles.logo} />
     </View>
   );
 };

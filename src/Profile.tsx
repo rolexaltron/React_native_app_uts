@@ -12,11 +12,13 @@ import HeaderMarquee from './HeaderMarquee';
 
 const Profile = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
 
+      <View style={styles.headerContainer}>
+        <HeaderMarquee />
+      </View>
+     <ScrollView contentContainerStyle={styles.container}>
     
-    <ScrollView contentContainerStyle={styles.container}>
-      <HeaderMarquee/>
       <View style={styles.ticket}>
         <View style={styles.header}>
           <Text style={styles.happy}>HAPPY JOURNEY</Text>
@@ -160,7 +162,7 @@ const Profile = () => {
       <Text style={styles.footer}>
         Centre for Railway Information Systems (CRIS)
       </Text>
-    </ScrollView>
+     </ScrollView>
     </SafeAreaView>
   );
 };
@@ -168,9 +170,19 @@ const Profile = () => {
 export default Profile;
 
 const styles = StyleSheet.create({
+    safeArea: {
+    flex: 1,
+    backgroundColor: '#fff', // optional
+  },
+    headerContainer: {
+    zIndex: 1,
+    elevation: 5,
+    backgroundColor: '#fff', // same as header background to avoid transparency
+  },
   container: {
     padding: 10,
     // backgroundColor: '#eee',
+     paddingBottom: 100,
   },
   title: {
     fontSize: 18,
