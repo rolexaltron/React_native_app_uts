@@ -9,7 +9,6 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const HeaderMarquee = () => {
@@ -37,7 +36,6 @@ const HeaderMarquee = () => {
             style={[styles.marqueeText, {transform: [{translateX}]}]}>
             IR Unreserved Ticketing
           </Animated.Text>
-      
         </View>
         <Image source={require('./assets/red2.png')} style={styles.logo} />
       </View>

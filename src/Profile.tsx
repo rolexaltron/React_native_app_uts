@@ -32,7 +32,7 @@ const Profile = () => {
           <View style={styles.adultvi1}>
             <View style={styles.row1}>
               <Text style={styles.label1}>ADULT SEASON</Text>
-              <Text style={styles.date1}>29/09/2024</Text>
+              <Text style={styles.date1}>29/06/2025</Text>
             </View>
 
             <View style={styles.row1}>
@@ -115,8 +115,8 @@ const Profile = () => {
 
             <Text style={styles.infoRow}>
               Validity: FROM{' '}
-              <Text style={styles.highlightDate}>30/09/2024</Text> TO{' '}
-              <Text style={styles.highlightDate}>29/10/2024</Text>
+              <Text style={styles.highlightDate}>30/06/2025</Text> TO{' '}
+              <Text style={styles.highlightDate}>29/07/2025</Text>
             </Text>
 
             <View style={styles.middleRow}>
@@ -128,7 +128,7 @@ const Profile = () => {
 
             <Text style={styles.bookingTime}>
               Booking Time:{' '}
-              <Text style={styles.boldText}>29/09/2024 20:10</Text>
+              <Text style={styles.boldText}>29/06/2025 20:10</Text>
             </Text>
           </View>
         </View>
@@ -446,7 +446,7 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     color: '#000',
     marginBottom: 6,
-    marginLeft: 35,
+    marginLeft: 25,
     fontFamily: 'serif',
     marginTop: -4,
   },
