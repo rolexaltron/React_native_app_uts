@@ -42,11 +42,11 @@ function App(): React.JSX.Element {
  return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Home"
           component={Home}
           options={{title: 'Welcome'}}
-        />
+        /> */}
          <Stack.Screen name="Profile" component={Profile}   options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
