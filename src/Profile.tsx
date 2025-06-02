@@ -5,11 +5,13 @@ import {
   ScrollView,
   Button,
   TouchableOpacity,
-  SafeAreaView,
   Platform,
   StatusBar,
 } from 'react-native';
 import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 import HeaderMarquee from './HeaderMarquee';
 
 const Profile = () => {
@@ -177,7 +179,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     //  backgroundColor: '#fff', // optional
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    //paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   headerContainer: {
     zIndex: 1,
@@ -249,7 +251,8 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#ff5733',
-    padding: 9,
+    padding: wp('2.6%'),
+    //7
     marginVertical: 4,
     borderRadius: 20,
     width: '98%',
