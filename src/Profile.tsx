@@ -7,14 +7,38 @@ import {
   TouchableOpacity,
   Platform,
   StatusBar,
+  GestureResponderEvent,
+  useColorScheme,
 } from 'react-native';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import LinearGradient from 'react-native-linear-gradient';
 import HeaderMarquee from './HeaderMarquee';
 
+interface ButtonProps {
+  label: string;
+  onPress?: (event: GestureResponderEvent) => void;
+}
+
+const GradientButton: React.FC<ButtonProps> = ({label}) => (
+  <TouchableOpacity style={styles.buttonWrapper} >
+    <LinearGradient
+      // colors={['#e84d27', '#ff6c4d']}
+      //colors={['#DE4B2A', '#F3794C']}
+      colors={['#e84d27', '#F3794C']}
+      start={{x: 0, y: 0}}
+      end={{x: 1, y: 0}}
+      style={styles.button}>
+      <Text style={styles.buttonText}>{label}</Text>
+    </LinearGradient>
+  </TouchableOpacity>
+);
 const Profile = () => {
+  const scheme = useColorScheme();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.headerContainer}>
@@ -34,7 +58,7 @@ const Profile = () => {
           <View style={styles.adultvi1}>
             <View style={styles.row1}>
               <Text style={styles.label1}>ADULT SEASON</Text>
-              <Text style={styles.date1}>29/06/2025</Text>
+              <Text style={styles.date1}>29/05/2025</Text>
             </View>
 
             <View style={styles.row1}>
@@ -110,15 +134,15 @@ const Profile = () => {
 
           <View>
             <Text style={styles.infoRowTop}>
-              SAC:<Text style={styles.blackText}>996411</Text> IR:
+              SAC:<Text style={styles.blackText}>996411</Text>   IR:
               <Text style={styles.blackText}>27AAAGM0289C2ZI</Text>
             </Text>
             <View style={styles.line3} />
 
             <Text style={styles.infoRow}>
               Validity: FROM{' '}
-              <Text style={styles.highlightDate}>30/06/2025</Text> TO{' '}
-              <Text style={styles.highlightDate}>29/07/2025</Text>
+              <Text style={styles.highlightDate}>30/05/2025</Text> TO{' '}
+              <Text style={styles.highlightDate}>29/06/2025</Text>
             </Text>
 
             <View style={styles.middleRow}>
@@ -130,7 +154,7 @@ const Profile = () => {
 
             <Text style={styles.bookingTime}>
               Booking Time:{' '}
-              <Text style={styles.boldText}>29/06/2025 20:10</Text>
+              <Text style={styles.boldText}>29/05/2025 20:10</Text>
             </Text>
           </View>
         </View>
@@ -150,7 +174,7 @@ const Profile = () => {
               For MEDICAL EMERGENCY | FIRST AID CONTACT TICKET{'\n'}
               CHECKING STAFF | GUARD OR DIAL 139
             </Text>
-            <View style={styles.buttonContainer}>
+            {/* <View style={styles.buttonContainer}>
               <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>OPEN QR CODE</Text>
               </TouchableOpacity>
@@ -162,6 +186,11 @@ const Profile = () => {
               <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>OK</Text>
               </TouchableOpacity>
+            </View> */}
+            <View style={styles.buttonContainer}>
+              <GradientButton label="OPEN QR CODE" />
+              <GradientButton label="NEXT TRAINS TO WARDHA JN.." />
+              <GradientButton label="OK" />
             </View>
           </View>
         </View>
@@ -178,7 +207,7 @@ export default Profile;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    //  backgroundColor: '#fff', // optional
+      backgroundColor: '#fff', // optional
     //paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   headerContainer: {
@@ -187,10 +216,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff', // same as header background to avoid transparency
   },
   container: {
-    padding: 10,
+    padding: 14,
     // backgroundColor: '#eee',
     paddingBottom: 100,
-    marginTop: -3,
+    marginTop: -8,
+    
   },
   title: {
     fontSize: 18,
@@ -246,24 +276,49 @@ const styles = StyleSheet.create({
     color: '#333',
     marginTop: 4,
   },
+  // buttonContainer: {
+  //   marginTop: 3,
+  // },
+  // button: {
+  //   backgroundColor: '#ff5733',
+  //   padding: wp('2.6%'),
+  //   //7
+  //   marginVertical: 4,
+  //   borderRadius: 20,
+  //   width: '98%',
+  //   marginLeft: 3,
+  //   elevation: 5,
+  // },
+  // buttonText: {
+  //   color: '#fff',
+  //   textAlign: 'center',
+  //   fontWeight: 'bold',
+  // },
   buttonContainer: {
+   // alignItems: 'center',
     marginTop: 3,
   },
-  button: {
-    backgroundColor: '#ff5733',
-    padding: wp('2.6%'),
-    //7
+  buttonWrapper: {
+    width: '98%',
     marginVertical: 4,
     borderRadius: 20,
-    width: '98%',
-    marginLeft: 3,
-    elevation: 5,
+    overflow: 'hidden', // needed for rounded gradient corners
+    elevation: 6,
+  },
+  button: {
+   padding: wp('2%'),
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 6,
   },
   buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
+    color: '#ffffff',
+    fontWeight: '500',
+    fontSize: 15,
   },
+
+  //
   footer: {
     marginTop: 2,
     textAlign: 'center',
@@ -274,10 +329,10 @@ const styles = StyleSheet.create({
     padding: 6,
     borderRadius: 1,
     alignItems: 'center',
-    width: '52%', // Set desired width
+    width: '53%', // Set desired width
     alignSelf: 'flex-start', // Align it to the left of the container
     marginTop: -3,
-    marginLeft: 11,
+    marginLeft: 15,
   },
   buttonTextmon: {
     color: '#fff',
@@ -347,7 +402,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     borderBottomWidth: 1,
     // marginVertical: 4, // optional spacing above and below the line
-    marginTop: 0,
+    marginTop: 2,
     marginBottom: 8,
   },
   line3: {
@@ -421,14 +476,14 @@ const styles = StyleSheet.create({
     color: 'red',
     fontWeight: 'bold',
     fontSize: 14,
-    marginLeft: 51,
+    marginLeft: 30,
     marginTop: -2,
   },
   localRed1: {
     color: 'red',
     fontWeight: 'bold',
     fontSize: 14,
-    marginLeft: 88,
+    marginLeft: 92,
     marginTop: -2,
   },
   validitySection: {
