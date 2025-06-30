@@ -9,6 +9,7 @@ import {
   StatusBar,
   GestureResponderEvent,
   useColorScheme,
+  Dimensions ,
 } from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -18,7 +19,7 @@ import {
 } from 'react-native-responsive-screen';
 import LinearGradient from 'react-native-linear-gradient';
 import HeaderMarquee from './HeaderMarquee';
-
+const SCREEN_WIDTH = Dimensions.get('window').width;
 interface ButtonProps {
   label: string;
   onPress?: (event: GestureResponderEvent) => void;
@@ -58,7 +59,7 @@ const Profile = () => {
           <View style={styles.adultvi1}>
             <View style={styles.row1}>
               <Text style={styles.label1}>ADULT SEASON</Text>
-              <Text style={styles.date1}>29/05/2025</Text>
+              <Text style={styles.date1}>29/06/2025</Text>
             </View>
 
             <View style={styles.row1}>
@@ -141,8 +142,8 @@ const Profile = () => {
 
             <Text style={styles.infoRow}>
               Validity: FROM{' '}
-              <Text style={styles.highlightDate}>30/05/2025</Text> TO{' '}
-              <Text style={styles.highlightDate}>29/06/2025</Text>
+              <Text style={styles.highlightDate}>30/06/2025</Text> TO{' '}
+              <Text style={styles.highlightDate}>29/07/2025</Text>
             </Text>
 
             <View style={styles.middleRow}>
@@ -154,7 +155,7 @@ const Profile = () => {
 
             <Text style={styles.bookingTime}>
               Booking Time:{' '}
-              <Text style={styles.boldText}>29/05/2025 20:10</Text>
+              <Text style={styles.boldText}>29/06/2025 20:10</Text>
             </Text>
           </View>
         </View>
@@ -324,15 +325,27 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
   },
+  // buttonmon: {
+  //   backgroundColor: '#6A1B9A',
+  //   padding: 6,
+  //   borderRadius: 1,
+  //   alignItems: 'center',
+  //   width: '53%', // Set desired width
+  //   alignSelf: 'flex-start', // Align it to the left of the container
+  //   marginTop: -3,
+  //   marginLeft: 15,
+  // },
+
   buttonmon: {
     backgroundColor: '#6A1B9A',
-    padding: 6,
-    borderRadius: 1,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 1, // Better visual appeal
     alignItems: 'center',
-    width: '53%', // Set desired width
-    alignSelf: 'flex-start', // Align it to the left of the container
-    marginTop: -3,
-    marginLeft: 15,
+    width: SCREEN_WIDTH * 0.45, // 50% of screen width
+    alignSelf: 'flex-start',
+    marginTop: -5,
+    marginLeft: 15, // Optional, but avoid if using proper layout
   },
   buttonTextmon: {
     color: '#fff',
@@ -429,13 +442,14 @@ const styles = StyleSheet.create({
   stationCircle: {
     backgroundColor: '#6A1B9A',
     color: '#fff',
-    borderRadius: 20,
-    width: 24,
-    height: 24,
+    borderRadius: 19,
+    width: 23,
+    height: 23,
     textAlign: 'center',
-    lineHeight: 24,
-    fontWeight: 'bold',
-    fontFamily: 'serif',
+    lineHeight: 23,
+  //  fontWeight: 'bold',
+  //  fontFamily: 'serif',
+    marginBottom:15
   },
   stationCode: {
     fontWeight: 'bold',
